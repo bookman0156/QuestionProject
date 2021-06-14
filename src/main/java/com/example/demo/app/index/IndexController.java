@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.app.index;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,6 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class IndexController {
 	@GetMapping
 	public String index(Model model) {
-		return "index";
+		return "/index.html";
 	}
 }
