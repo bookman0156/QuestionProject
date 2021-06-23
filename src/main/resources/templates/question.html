@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta CHARSET=UTF-8>
+		<link th:href="@{/css/question.css}" rel="stylesheet" type="text/css">
+		<link href="question.css" rel="stylesheet" type="text/css">
+		<title>オープラン 入社時確認テスト</title>
+	</head>
+
+	<body>
+		<div class="wrapper">
+		<div class="explain-wrapper">
+			<h1>理解度確認テスト</h1>
+			<p>以下の設問に対し、正しい選択肢を選んで回答してください。</p>
+			<p>全ての設問に回答したら、最下部の送信ボタンを押してください。</p>
+		</div>
+		<div class="question-wrapper">
+			<h4>ああああああああああああああああは１１１１１１１１１１？</h4>
+			<form class="question-form" name="q1">
+				<p><input class="question-select" type="radio" name="q1" value="ああああ">ああああ</p>
+				<p><input class="question-select" type="radio" name="q1" value="いいいい">いいいい</p>
+				<p><input class="question-select" type="radio" name="q1" value="うううう">うううう</p>
+				<p><input class="question-select" type="radio" name="q1" value="ええええ">ええええ</p>
+				<!-- 貰ってきた配列をformの外のスコープでeachで回して全て表示する
+					formのnameを問題番号にして1ずつ増やす
+					問題本文とinputのvalueと表示する文字はdbからもらってきた選択肢を挿入する -->
+			</form>
+		</div>
+		<div class="submit-wrapper">
+			<h4>回答をよく確認して送信してください</h4>
+			<input type="submit" method="post" value="送信" action="#">
+		</div>
+	</div>
+	</body>
+</html>

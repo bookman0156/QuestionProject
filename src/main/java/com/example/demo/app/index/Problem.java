@@ -6,13 +6,13 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "users")
+@Table(name = "question")
 public class Problem {
 	@Id
 	@Column(name="id")
 	private int id;
-	@Column(name="name")
-	private String name;
+	@Column(name="question")
+	private String question;
 	public int getId() {
 		return id;
 	}
@@ -20,9 +20,9 @@ public class Problem {
 		this.id = id;
 	}
 	public String getName() {
-		return name;
+		return question;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setName(String question) {
+		this.question = question;
 	}
 }
