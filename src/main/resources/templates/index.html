@@ -5,13 +5,54 @@
 	</head>
 	<body>
 		<h1>確認度テストですよ</h1>
+		<p>JAVA</p>
 		<table border="1">
 		  <tr>
-		    <th>ID</th><th>名前</th>
+		    <th>ID</th><th>問題</th><th>選択肢1</th><th>選択肢2</th><th>選択肢3</th><th>選択肢4</th><th>答え</th><th>ジャンル</th>
 		  </tr>
-		  <tr th:each="obj : ${data}">
+		  <tr th:each="obj : ${data_java}">
 		    <td th:text="${obj.id}"></td>
-		    <td th:text="${obj.name}"></td>
+		    <td th:text="${obj.problem}"></td>
+		   	<td th:text="${obj.select_1}"></td>
+		   	<td th:text="${obj.select_2}"></td>
+		   	<td th:text="${obj.select_3}"></td>
+		   	<td th:text="${obj.select_4}"></td>
+		   	<td th:text="${obj.answer}"></td>
+		   	<td th:text="${obj.type}"></td>
+		  </tr>
+		</table>
+		
+		<p>PHP</p>
+		<table border="1">
+		  <tr>
+		    <th>ID</th><th>問題</th><th>選択肢1</th><th>選択肢2</th><th>選択肢3</th><th>選択肢4</th><th>答え</th><th>ジャンル</th>
+		  </tr>
+		  <tr th:each="obj : ${data_php}">
+		    <td th:text="${obj.id}"></td>
+		    <td th:text="${obj.problem}"></td>
+		   	<td th:text="${obj.select_1}"></td>
+		   	<td th:text="${obj.select_2}"></td>
+		   	<td th:text="${obj.select_3}"></td>
+		   	<td th:text="${obj.select_4}"></td>
+		   	<td th:text="${obj.answer}"></td>
+		   	<td th:text="${obj.type}"></td>
+		  </tr>
+		</table>
+		
+		<p>SQL</p>
+		<table border="1">
+		  <tr>
+		    <th>ID</th><th>問題</th><th>選択肢1</th><th>選択肢2</th><th>選択肢3</th><th>選択肢4</th><th>答え</th><th>ジャンル</th>
+		  </tr>
+		  <tr th:each="obj : ${data_sql}">
+		    <td th:text="${obj.id}"></td>
+		    <td th:text="${obj.problem}"></td>
+		   	<td th:text="${obj.select_1}"></td>
+		   	<td th:text="${obj.select_2}"></td>
+		   	<td th:text="${obj.select_3}"></td>
+		   	<td th:text="${obj.select_4}"></td>
+		   	<td th:text="${obj.answer}"></td>
+		   	<td th:text="${obj.type}"></td>
 		  </tr>
 		</table>
 	</body>

@@ -16,12 +16,19 @@ public class ProblemController {
 	@Autowired
 	private ProblemRepository repository;
 	
-	@RequestMapping(method = RequestMethod.GET)
+	@RequestMapping(value = "/problempage",method = RequestMethod.GET)
 	public ModelAndView index(ModelAndView mav) {
-		List<Problem> list = repository.findAll();
-		mav.addObject("data",list);
+		List<Problem> list_java = repository.findType("JAVA");
+		List<Problem> list_php = repository.findType("PHP");
+		List<Problem> list_sql = repository.findType("SQL");
+		
+		mav.addObject("data_java",list_java);
+		mav.addObject("data_php",list_php);
+		mav.addObject("data_sql",list_sql);
+		
 		mav.setViewName("index");
-				
+		
+		
 		return mav;
 	}
 }
