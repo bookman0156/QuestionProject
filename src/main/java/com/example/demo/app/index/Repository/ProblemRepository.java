@@ -12,7 +12,7 @@ import com.example.demo.app.index.Problem;
 
 @Repository
 public interface ProblemRepository extends JpaRepository<Problem, Integer>,JpaSpecificationExecutor<Problem> {
-
+	
 	@Query("select a from Problem a where a.id like %:id% order by a.id asc")
 	public List<Problem> findId(@Param("id")String id);
 	

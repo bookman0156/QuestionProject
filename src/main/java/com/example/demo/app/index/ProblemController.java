@@ -16,7 +16,7 @@ public class ProblemController {
 	@Autowired
 	private ProblemRepository repository;
 	
-	@RequestMapping(value = "/problem",method = RequestMethod.GET)
+	@RequestMapping(value = "/problempage",method = RequestMethod.GET)
 	public ModelAndView index(ModelAndView mav) {
 		List<Problem> list_java = repository.findType("JAVA");
 		List<Problem> list_php = repository.findType("PHP");
