@@ -18,4 +18,5 @@ public interface ProblemRepository extends JpaRepository<Problem, Integer>,JpaSp
 	
 	@Query("select a from Problem a where a.type like %:type% order by a.id asc")
 	public List<Problem> findType(@Param("type")String type);
+	
 }
