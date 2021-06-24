@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>解答</title>
+</head>
+<body>
+	<h1>確認度テストですよ</h1>
+	<p>JAVA</p>
+	<table border="1">
+		<tr>
+		  <th>答え</th>
+		</tr>
+		<tr th:each="obj : ${data_java}">
+		  <td th:text="${obj.answer}"></td>
+		 </tr>
+	</table>
+		
+	<p>PHP</p>
+	<table border="1">
+		<tr>
+		  <th>答え</th>
+		</tr>
+		<tr th:each="obj : ${data_php}">
+		  <td th:text="${obj.answer}"></td>
+		</tr>
+	</table>
+		
+	<p>SQL</p>
+	<table border="1">
+		<tr>
+		  <th>ID</th><th>問題</th><th>選択肢1</th><th>選択肢2</th><th>選択肢3</th><th>選択肢4</th><th>答え</th><th>ジャンル</th>
+		</tr>
+		<tr th:each="obj : ${data_sql}">
+		  <td th:text="${obj.answer}"></td>
+		</tr>
+	</table>
+</body>
+</html>
