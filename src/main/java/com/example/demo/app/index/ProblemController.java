@@ -8,27 +8,39 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.example.demo.app.index.Repository.ProblemRepository;
-
 @Controller
 public class ProblemController {
-
+	
 	@Autowired
-	private ProblemRepository repository;
+	private ProblemService service;
 	
 	@RequestMapping(value = "/problempage",method = RequestMethod.GET)
-	public ModelAndView index(ModelAndView mav) {
-		List<Problem> list_java = repository.findType("JAVA");
-		List<Problem> list_php = repository.findType("PHP");
-		List<Problem> list_sql = repository.findType("SQL");
+	public ModelAndView get_ProblemData(ModelAndView mav) {
 		
-		mav.addObject("data_java",list_java);
-		mav.addObject("data_php",list_php);
-		mav.addObject("data_sql",list_sql);
-		
+		mav = Data();
 		mav.setViewName("index");
 		
-		
 		return mav;
+	}
+	
+	@RequestMapping(value = "/answerpage",method = RequestMethod.GET)
+	public ModelAndView get_AnserData(ModelAndView mav) {
+		
+		mav = Data();		
+		mav.setViewName("answer");
+				
+		return mav;
+	}
+	
+	private ModelAndView Data() {
+		ModelAndView model = new ModelAndView();
+		List<Problem> list_java = service.find_ProblemType("JAVA");
+		List<Problem> list_php = service.find_ProblemType("PHP");
+		List<Problem> list_sql = service.find_ProblemType("SQL");
+		
+		model.addObject("data_java",list_java);
+		model.addObject("data_php",list_php);
+		model.addObject("data_sql",list_sql);
+		return model;
 	}
 }
