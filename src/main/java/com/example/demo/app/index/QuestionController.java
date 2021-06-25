@@ -9,10 +9,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-public class ProblemController {
+public class QuestionController {
 	
 	@Autowired
-	private ProblemService service;
+	private QuestionService service;
 	
 	@RequestMapping(value = "/problempage",method = RequestMethod.GET)
 	public ModelAndView get_ProblemData(ModelAndView mav) {
@@ -34,9 +34,9 @@ public class ProblemController {
 	
 	private ModelAndView Data() {
 		ModelAndView model = new ModelAndView();
-		List<Problem> list_java = service.find_ProblemType("JAVA");
-		List<Problem> list_php = service.find_ProblemType("PHP");
-		List<Problem> list_sql = service.find_ProblemType("SQL");
+		List<Question> list_java = service.find_QuestionType("JAVA",3);
+		List<Question> list_php = service.find_QuestionType("PHP");
+		List<Question> list_sql = service.find_QuestionType("SQL");
 		
 		model.addObject("data_java",list_java);
 		model.addObject("data_php",list_php);
