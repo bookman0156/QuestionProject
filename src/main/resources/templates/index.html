@@ -55,23 +55,28 @@
 		   	
 		  </tr>
 		</table>
+		<form name="question_form" action="#">
+		<h2>PHP</h2>
 		<div th:each="obj : ${data_php}">
-		<form th:name="'PHP'+${obj.id}">
+
 			<h4 th:text="${obj.problem}"></h4>
-			<input type="radio" th:value=${obj.select_1} th:text=${obj.select_1}>
-			<input type="radio" th:value=${obj.select_2} th:text=${obj.select_2}>
-			<input type="radio" th:value=${obj.select_3} th:text=${obj.select_3}>
-			<input type="radio" th:value=${obj.select_4} th:text=${obj.select_4}>	
-		</form>
+			<input type="radio" th:name="${obj.id}" th:value=${obj.select_1} th:text=${obj.select_1}>
+			<input type="radio" th:name="${obj.id}" th:value=${obj.select_2} th:text=${obj.select_2}>
+			<input type="radio" th:name="${obj.id}" th:value=${obj.select_3} th:text=${obj.select_3}>
+			<input type="radio" th:name="${obj.id}" th:value=${obj.select_4} th:text=${obj.select_4}>	
+		
 		</div>
+		<h2>Java</h2>
 		<div th:each="obj : ${data_java}">
-		<form th:name="'JAVA'+${obj.id}">
+
 			<h4 th:text="${obj.problem}"></h4>
-			<input type="radio" th:value=${obj.select_1} th:text=${obj.select_1}>
-			<input type="radio" th:value=${obj.select_2} th:text=${obj.select_2}>
-			<input type="radio" th:value=${obj.select_3} th:text=${obj.select_3}>
-			<input type="radio" th:value=${obj.select_4} th:text=${obj.select_4}>	
-		</form>
+			<input type="radio" th:name="${obj.id}" th:value=${obj.select_1} th:text=${obj.select_1}>
+			<input type="radio" th:name="${obj.id}" th:value=${obj.select_2} th:text=${obj.select_2}>
+			<input type="radio" th:name="${obj.id}" th:value=${obj.select_3} th:text=${obj.select_3}>
+			<input type="radio" th:name="${obj.id}" th:value=${obj.select_4} th:text=${obj.select_4}>
 		</div>
+		<input type="submit" value="回答を送信する">
+		</form>
+		
 	</body>
 </html>
