@@ -2,9 +2,13 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>オープラン理解度確認テスト</title>
+		 <link th:href="@{/css/question.css}" rel="stylesheet">
 	</head>
 	<body>
-		<h1>確認度テストですよ</h1>
+	<div class="container">
+		<h1>確認度テスト</h1>
+		<p>問題文を読み、以下の４つの選択肢から当てはまる回答を１つ選んで選択しなさい。</p>
+		<p>全ての問題に回答出来たら、最下部の送信ボタンで回答を送信しなさい。</p>
 		<p>JAVA</p>
 		<table border="1">
 		  <tr>
@@ -55,28 +59,28 @@
 		   	
 		  </tr>
 		</table>
-		<form name="question_form" action="#">
+		<form name="question_form" action="#" method="post">
 		<h2>PHP</h2>
 		<div th:each="obj : ${data_php}">
 
 			<h4 th:text="${obj.problem}"></h4>
-			<input type="radio" th:name="${obj.id}" th:value=${obj.select_1} th:text=${obj.select_1}>
-			<input type="radio" th:name="${obj.id}" th:value=${obj.select_2} th:text=${obj.select_2}>
-			<input type="radio" th:name="${obj.id}" th:value=${obj.select_3} th:text=${obj.select_3}>
-			<input type="radio" th:name="${obj.id}" th:value=${obj.select_4} th:text=${obj.select_4}>	
+			<p><input type="radio" th:name="${obj.id}" th:value=${obj.select_1} th:text=${obj.select_1} class="question-select"></p>
+			<p><input type="radio" th:name="${obj.id}" th:value=${obj.select_2} th:text=${obj.select_2} class="question-select"></p>
+			<p><input type="radio" th:name="${obj.id}" th:value=${obj.select_3} th:text=${obj.select_3} class="question-select"></p>
+			<p><input type="radio" th:name="${obj.id}" th:value=${obj.select_4} th:text=${obj.select_4} class="question-select"></p>
 		
 		</div>
 		<h2>Java</h2>
 		<div th:each="obj : ${data_java}">
 
 			<h4 th:text="${obj.problem}"></h4>
-			<input type="radio" th:name="${obj.id}" th:value=${obj.select_1} th:text=${obj.select_1}>
-			<input type="radio" th:name="${obj.id}" th:value=${obj.select_2} th:text=${obj.select_2}>
-			<input type="radio" th:name="${obj.id}" th:value=${obj.select_3} th:text=${obj.select_3}>
-			<input type="radio" th:name="${obj.id}" th:value=${obj.select_4} th:text=${obj.select_4}>
+			<p><input type="radio" th:name="${obj.id}" th:value=${obj.select_1} th:text=${obj.select_1} class="question-select"></p>
+			<p><input type="radio" th:name="${obj.id}" th:value=${obj.select_2} th:text=${obj.select_2} class="question-select"></p>
+			<p><input type="radio" th:name="${obj.id}" th:value=${obj.select_3} th:text=${obj.select_3} class="question-select"></p>
+			<p><input type="radio" th:name="${obj.id}" th:value=${obj.select_4} th:text=${obj.select_4} class="question-select"></p>
 		</div>
-		<input type="submit" value="回答を送信する">
+		<input type="submit" value="回答を送信する" class="submit-button">
 		</form>
-		
+	</div>
 	</body>
 </html>
