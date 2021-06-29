@@ -1,0 +1,26 @@
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<title>オープラン理解度確認テスト</title>
+		 <link th:href="@{/css/question.css}" rel="stylesheet">
+	</head>
+	<body>
+	<div class="container">
+		<h1>テスト結果</h1>
+		<p>この結果を担当者に見せてください。</p>
+		<p>お疲れ様でした。</p>
+		
+		<table border="1">
+			<tr>
+				<th>問題</th>
+		  		<th>答え</th>
+			</tr>
+			<tr th:each="obj : ${data_php}">
+				<td></td>
+		  		<td th:text="${obj.answer}"></td>
+		</tr>
+	</table>
+		
+	</div>
+	</body>
+</html>
