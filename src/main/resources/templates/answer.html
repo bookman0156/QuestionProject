@@ -10,9 +10,11 @@
 	<table border="1">
 		<tr>
 		  <th>答え</th>
+		  <th>解答</th>
 		</tr>
-		<tr th:each="obj : ${data_java}">
+		<tr th:each="obj,stat : ${data_java}">
 		  <td th:text="${obj.answer}"></td>
+		  <td th:text="${post_java[stat.index]}"></td>
 		 </tr>
 	</table>
 		
@@ -20,16 +22,20 @@
 	<table border="1">
 		<tr>
 		  <th>答え</th>
+		  <th>解答</th>
 		</tr>
-		<tr th:each="obj : ${data_php}">
+		<tr th:each="obj,stat : ${data_php}">
 		  <td th:text="${obj.answer}"></td>
+		  <td th:text="${post_php[stat.index]}"></td>
 		</tr>
+
 	</table>
 		
 	<p>SQL</p>
 	<table border="1">
 		<tr>
-		  <th>ID</th><th>問題</th><th>選択肢1</th><th>選択肢2</th><th>選択肢3</th><th>選択肢4</th><th>答え</th><th>ジャンル</th>
+		 <th>答え</th>
+		 <th>解答</th>
 		</tr>
 		<tr th:each="obj : ${data_sql}">
 		  <td th:text="${obj.answer}"></td>
