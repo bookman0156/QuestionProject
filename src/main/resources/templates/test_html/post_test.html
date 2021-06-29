@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form method="post" action="/answer" th:object="${answerForm}">
+		<label>あ:</label><input type="radio" name="selectedRadio[0]" value="あ">
+		<label>い:</label><input type="radio" name="selectedRadio[0]" value="い">
+		<label>う:</label><input type="radio" name="selectedRadio[0]" value="う">
+		<label>え:</label><input type="radio" name="selectedRadio[0]" value="え">
+		
+		<label>か:</label><input type="radio" name="selectedRadio[1]" value="お">
+		<label>き:</label><input type="radio" name="selectedRadio[1]" value="か">
+		<label>く:</label><input type="radio" name="selectedRadio[1]" value="き">
+		<label>け:</label><input type="radio" name="selectedRadio[1]" value="く">
+		<input type="submit" value="決定" />
+	</form>
+</body>
+</html>

@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -14,7 +16,7 @@ public class QuestionController {
 	@Autowired
 	private QuestionService service;
 	
-	@RequestMapping(value = "/problempage",method = RequestMethod.GET)
+	@RequestMapping(value = "/questionpage")
 	public ModelAndView get_ProblemData(ModelAndView mav) {
 		
 		mav = Data();
@@ -23,14 +25,13 @@ public class QuestionController {
 		return mav;
 	}
 	
-	@RequestMapping(value = "/answerpage",method = RequestMethod.GET)
-	public ModelAndView get_AnserData(ModelAndView mav) {
-		
-		mav = Data();		
-		mav.setViewName("answer");
-				
-		return mav;
-	}
+//	@RequestMapping(value = "/answerpage",method = RequestMethod.GET)
+//	public ModelAndView get_AnserData(ModelAndView mav) {
+//		
+//		mav = Data();
+//		mav.setViewName("answer");
+//		return mav;
+//	}
 	
 	private ModelAndView Data() {
 		ModelAndView model = new ModelAndView();
@@ -43,4 +44,20 @@ public class QuestionController {
 		model.addObject("data_sql",list_sql);
 		return model;
 	}
+	
+	@RequestMapping(value = "/a")
+	public String index(Model model) {
+		return "test_html/post_test";
+	}
+	
+	@RequestMapping(value = "/answer",method = RequestMethod.POST)
+	public ModelAndView Anserpage(ModelAndView mav ,@ModelAttribute("answerForm")AnswerForm form) {
+		
+		mav = Data();
+		mav.addObject("post_java",form.getSelectJava());
+		mav.addObject("post_php",form.getSelectPHP());
+		mav.setViewName("answer");
+		return mav;
+	}
+
 }
