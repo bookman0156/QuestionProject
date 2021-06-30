@@ -14,10 +14,16 @@ public class QuestionService {
 	@Autowired
 	private QuestionRepository repository;
 	
+	//
+	// 問題の種類が一致しているデータを取得する
+	//
 	public List<Question> find_QuestionType(String type) {
 		return repository.findType(type);
 	}
 	
+	//
+	// 問題の種類が一致しているデータを取得したい数だけ取得する
+	//
 	public List<Question> find_QuestionType(String type,int num) {
 		Pageable limit = PageRequest.of(0, num);
 		return repository.findType(type,limit);

@@ -41,5 +41,20 @@
 		  <td th:text="${obj.answer}"></td>
 		</tr>
 	</table>
+	<p>得点</p>
+	<table border="1">
+		<tr>
+		 <th>JAVA</th>
+		 <th>PHP</th>
+		 <th>SQL</th>
+		 <th>合計</th>
+		</tr>
+		<tr>
+		  <td th:text="|${java_score}/${java_num}|"></td>
+		  <td th:text="|${php_score}/${php_num}|"></td>
+		  <td></td>
+		  <td th:text="|${score}/${num}|"></td>
+		</tr>
+	</table>
 </body>
 </html>

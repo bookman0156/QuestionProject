@@ -17,6 +17,9 @@ public interface QuestionRepository extends JpaRepository<Question, Integer>,Jpa
 	@Query("select p from Question p where p.id like %:id% order by p.id asc")
 	public List<Question> findId(@Param("id")String id);
 	
+	//
+	// JPQL文で取得したい種類のデータをselectする
+	//
 	@Query("select p from Question p where p.type like %:type% order by p.id asc")
 	public List<Question> findType(@Param("type")String type);
 
