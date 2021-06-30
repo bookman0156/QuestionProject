@@ -6,17 +6,6 @@
 </head>
 <body>
 	<h1>確認度テストですよ</h1>
-	<p>JAVA</p>
-	<table border="1">
-		<tr>
-		  <th>答え</th>
-		  <th>解答</th>
-		</tr>
-		<tr th:each="obj,stat : ${data_java}">
-		  <td th:text="${obj.answer}"></td>
-		  <td th:text="${post_java[stat.index]}"></td>
-		 </tr>
-	</table>
 		
 	<p>PHP</p>
 	<table border="1">
@@ -37,22 +26,50 @@
 		 <th>答え</th>
 		 <th>解答</th>
 		</tr>
-		<tr th:each="obj : ${data_sql}">
+		<tr th:each="obj,stat : ${data_sql}">
 		  <td th:text="${obj.answer}"></td>
+		  <td th:text="${post_sql[stat.index]}"></td>
 		</tr>
 	</table>
+	
+	<p>Git/Command</p>
+	<table border="1">
+		<tr>
+		  <th>答え</th>
+		  <th>解答</th>
+		</tr>
+		<tr th:each="obj,stat : ${data_gitcommand}">
+		  <td th:text="${obj.answer}"></td>
+		  <td th:text="${post_gitcommand[stat.index]}"></td>
+		 </tr>
+	</table>
+	
+	<p>HTML/CSS</p>
+	<table border="1">
+		<tr>
+		  <th>答え</th>
+		  <th>解答</th>
+		</tr>
+		<tr th:each="obj,stat : ${data_htmlcss}">
+		  <td th:text="${obj.answer}"></td>
+		  <td th:text="${post_htmlcss[stat.index]}"></td>
+		 </tr>
+	</table>
+	
 	<p>得点</p>
 	<table border="1">
 		<tr>
-		 <th>JAVA</th>
 		 <th>PHP</th>
 		 <th>SQL</th>
+		 <th>Git/Command</th>
+		 <th>HTML/CSS</th>
 		 <th>合計</th>
 		</tr>
 		<tr>
-		  <td th:text="|${java_score}/${java_num}|"></td>
 		  <td th:text="|${php_score}/${php_num}|"></td>
-		  <td></td>
+		  <td th:text="|${sql_score}/${sql_num}|"></td>
+		  <td th:text="|${gitcommand_score}/${gitcommand_num}|"></td>
+		  <td th:text="|${htmlcss_score}/${htmlcss_num}|"></td>
 		  <td th:text="|${score}/${num}|"></td>
 		</tr>
 	</table>
