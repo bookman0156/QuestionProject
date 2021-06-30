@@ -20,13 +20,31 @@
 			<p><input type="radio" th:name="|selectPHP[${stat.index}]|" th:value=${obj.select_4} th:text=${obj.select_4} class="question-select"></p>
 		</div>
 		
-		<h2>Java</h2>
-		<div class="question-wrapper" th:each="obj,stat : ${data_java}">
+		<h2>SQL</h2>
+		<div class="question-wrapper" th:each="obj,stat : ${data_sql}">
 			<h4 th:text="${obj.problem}"></h4>
-			<p><input type="radio" th:name="|selectJava[${stat.index}]|" th:value=${obj.select_1} th:text=${obj.select_1} class="question-select"></p>
-			<p><input type="radio" th:name="|selectJava[${stat.index}]|" th:value=${obj.select_2} th:text=${obj.select_2} class="question-select"></p>
-			<p><input type="radio" th:name="|selectJava[${stat.index}]|" th:value=${obj.select_3} th:text=${obj.select_3} class="question-select"></p>
-			<p><input type="radio" th:name="|selectJava[${stat.index}]|" th:value=${obj.select_4} th:text=${obj.select_4} class="question-select"></p>
+			<p><input type="radio" th:name="|select_Sql[${stat.index}]|" th:value=${obj.select_1} th:text=${obj.select_1} class="question-select"></p>
+			<p><input type="radio" th:name="|select_Sql[${stat.index}]|" th:value=${obj.select_2} th:text=${obj.select_2} class="question-select"></p>
+			<p><input type="radio" th:name="|select_Sql[${stat.index}]|" th:value=${obj.select_3} th:text=${obj.select_3} class="question-select"></p>
+			<p><input type="radio" th:name="|select_Sql[${stat.index}]|" th:value=${obj.select_4} th:text=${obj.select_4} class="question-select"></p>
+		</div>
+		
+		<h2>Git/Command</h2>
+		<div class="question-wrapper" th:each="obj,stat : ${data_gitcommand}">
+			<h4 th:text="${obj.problem}"></h4>
+			<p><input type="radio" th:name="|select_Command[${stat.index}]|" th:value=${obj.select_1} th:text=${obj.select_1} class="question-select"></p>
+			<p><input type="radio" th:name="|select_Command[${stat.index}]|" th:value=${obj.select_2} th:text=${obj.select_2} class="question-select"></p>
+			<p><input type="radio" th:name="|select_Command[${stat.index}]|" th:value=${obj.select_3} th:text=${obj.select_3} class="question-select"></p>
+			<p><input type="radio" th:name="|select_Command[${stat.index}]|" th:value=${obj.select_4} th:text=${obj.select_4} class="question-select"></p>
+		</div>
+		
+		<h2>HTML/CSS</h2>
+		<div class="question-wrapper" th:each="obj,stat : ${data_htmlcss}">
+			<h4 th:text="${obj.problem}"></h4>
+			<p><input type="radio" th:name="|select_Html[${stat.index}]|" th:value=${obj.select_1} th:text=${obj.select_1} class="question-select"></p>
+			<p><input type="radio" th:name="|select_Html[${stat.index}]|" th:value=${obj.select_2} th:text=${obj.select_2} class="question-select"></p>
+			<p><input type="radio" th:name="|select_Html[${stat.index}]|" th:value=${obj.select_3} th:text=${obj.select_3} class="question-select"></p>
+			<p><input type="radio" th:name="|select_Html[${stat.index}]|" th:value=${obj.select_4} th:text=${obj.select_4} class="question-select"></p>
 		</div>
 		<input type="submit" value="回答を送信する" class="submit-button">
 		</form>
